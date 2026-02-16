@@ -117,7 +117,7 @@ onSwiper={setSwiperInstance}
   }}
         navigation
         loop={true}
-        loopAdditionalSlides={2}
+        loopedSlides={2}
       >
             {projects?.map((project)=>{
                 return(

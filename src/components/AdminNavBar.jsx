@@ -12,7 +12,6 @@ const AdminNavBar = ({items}) => {
           axios.post(`https://ui-ux-portfolio-alpha.vercel.app/api/api/logout`,{
           headers:{
             "Accept":"application/json",
-            'Content-Type':"application/json",
             Authorization:localStorage.getItem("token")
           }
         }).then(res=>{console.log(res.data),navigate("/"),localStorage.removeItem("token")})
