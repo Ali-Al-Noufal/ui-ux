@@ -101,7 +101,7 @@ const Show = () => {
         </div>
       </div>
           <Swiper 
-        onSwiper={setSwiperRef}
+        onSwiper={setSwiperInstance}
         observer={true}           // يراقب التغييرات في العناصر
         observeParents={true}     // يراقب التغييرات في العناصر الأب
         loop={true}               // تفعيل الدوران
