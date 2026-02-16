@@ -13,7 +13,7 @@ const Login = () => {
             headers:{
                 "Accept":"application/json",
             }
-        }).then(res=>{console.log(res),localStorage.setItem("token",`Bearer ${res.data.data.token}`),navigate("/dashboard")})
+        }).then(res=>{console.log(res),localStorage.setItem("token",`Bearer ${res.data.data.Token}`),navigate("/dashboard")})
         .catch(err=>console.log(err))
     }
   return (
