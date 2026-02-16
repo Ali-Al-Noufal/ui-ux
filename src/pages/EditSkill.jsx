@@ -11,7 +11,7 @@ const EditSkill = () => {
           headers:{
             "Accept":"application/json",
             'Content-Type':"application/json",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>{setSkill(res.data),setData(res.data)})
         .catch(err=>console.log(err))
@@ -22,7 +22,7 @@ const EditSkill = () => {
           headers:{
             "Accept":"application/json",
             "Content-Type":"multipart/form-data",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>{console.log(res),alert(res.data.message),navigate("/skills")})
 .catch(err=>console.log(err))

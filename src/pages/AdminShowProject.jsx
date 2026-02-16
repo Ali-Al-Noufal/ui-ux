@@ -15,7 +15,7 @@ const AdminShowProject = () => {
           headers:{
             "Accept":"application/json",
             'Content-Type':"application/json",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>{setProject(res.data),setData(res.data)})
         .catch(err=>console.log(err))
@@ -26,7 +26,7 @@ const AdminShowProject = () => {
           headers:{
             "Accept":"application/json",
             "Content-Type":"multipart/form-data",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>{console.log(res),alert(res.data.message),navigate(0)})
 .catch(err=>console.log(err))

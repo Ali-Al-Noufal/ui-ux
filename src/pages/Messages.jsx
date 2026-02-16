@@ -11,7 +11,7 @@ const navigate=useNavigate()
             headers:{
               "Accept":"application/json",
               'Content-Type':"application/json",
-              Authorization:localStorage.getItem("Token")
+              Authorization:localStorage.getItem("token")
             }
           }).then(res=>setMessages(res.data))
           .catch(err=>console.log(err))
@@ -21,7 +21,7 @@ const navigate=useNavigate()
           headers:{
             "Accept":"application/json",
             'Content-Type':"application/json",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>navigate(0))
         .catch(err=>console.log(err))

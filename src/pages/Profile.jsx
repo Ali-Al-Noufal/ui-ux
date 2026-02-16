@@ -10,8 +10,7 @@ const Profile = () => {
       useEffect(()=>{
         axios.get("https://ui-ux-portfolio-alpha.vercel.app/api/api/guest/users/1",{
           headers:{
-            "Accept":"application/json",
-            'Content-Type':"application/json"
+            "Accept":"application/json"
           }
         }).then(res=>{setUser(res.data),setData(res.data)})
         .catch(err=>console.log(err))
@@ -22,7 +21,7 @@ const Profile = () => {
           headers:{
             "Accept":"application/json",
             "Content-Type":"multipart/form-data",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>{console.log(res),alert(res.data.message),navigate(0)})
 .catch(err=>console.log(err))
