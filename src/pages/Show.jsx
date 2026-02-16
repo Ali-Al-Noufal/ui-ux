@@ -1,6 +1,6 @@
 
 import { Link, useNavigate, useParams } from "react-router-dom"
-import {  Pagination } from "swiper/modules"
+import {  Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -101,10 +101,12 @@ const Show = () => {
         </div>
       </div>
           <Swiper 
-onSwiper={setSwiperInstance}
-        modules={[ Pagination]}
-  slidesPerView={1} 
-  spaceBetween={10}
+        onSwiper={setSwiperRef}
+        observer={true}           // يراقب التغييرات في العناصر
+        observeParents={true}     // يراقب التغييرات في العناصر الأب
+        loop={true}               // تفعيل الدوران
+        slidesPerView={1}
+        spaceBetween={30}
   breakpoints={{
     640: {
       slidesPerView: 2,
@@ -115,11 +117,7 @@ onSwiper={setSwiperInstance}
       spaceBetween: 30,
     },
   }}
-        navigation
-        loop={true}
-        loopPreventsSliding={false}
-        loopedSlides={2}
-        rewind={false}
+modules={[Pagination, Navigation]} 
       >
             {projects?.map((project)=>{
                 return(
