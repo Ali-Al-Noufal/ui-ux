@@ -13,7 +13,7 @@ const AdminNavBar = ({items}) => {
           headers:{
             "Accept":"application/json",
             'Content-Type':"application/json",
-            Authorization:localStorage.getItem("Token")
+            Authorization:localStorage.getItem("token")
           }
         }).then(res=>{console.log(res.data),navigate("/"),localStorage.removeItem("token")})
         .catch(err=>console.log(err))

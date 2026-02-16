@@ -81,7 +81,7 @@ const AdminProjects = () => {
             onChange={(event)=>{setData({...data,["image"]:event.target.files[0]})}} />
             <textarea placeholder="description" className="bg-[#FFFFFF] border w-[60%] h-30 rounded-2xl p-5"
             onChange={(event)=>{setData({...data,["description"]:event.target.value})}} ></textarea>
-            <input type="submit" value="Edite" className="bg-[#1d1d1d] text-[#FFFFFF] border w-[60%] h-15 text-center rounded-2xl px-3" />
+            <input type="submit" value="Add" className="bg-[#1d1d1d] text-[#FFFFFF] border w-[60%] h-15 text-center rounded-2xl px-3" />
       </form>
     </div>
   )
