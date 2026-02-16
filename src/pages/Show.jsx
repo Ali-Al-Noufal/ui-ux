@@ -117,7 +117,9 @@ onSwiper={setSwiperInstance}
   }}
         navigation
         loop={true}
+        loopPreventsSliding={false}
         loopedSlides={2}
+        rewind={false}
       >
             {projects?.map((project)=>{
                 return(

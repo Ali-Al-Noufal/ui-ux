@@ -9,7 +9,7 @@ const AdminNavBar = ({items}) => {
     const [show,setShow]=useState(false)
     const navigate=useNavigate()
     const logout=()=>{
-          axios.post(`https://ui-ux-portfolio-alpha.vercel.app/api/api/logout`,{
+          axios.post(`https://ui-ux-portfolio-alpha.vercel.app/api/api/logout`,null,{
           headers:{
             "Accept":"application/json",
             Authorization:localStorage.getItem("token")
