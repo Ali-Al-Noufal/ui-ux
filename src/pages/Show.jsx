@@ -37,7 +37,7 @@ const Show = () => {
       }
     }).then(res=>setProject(res.data))
     .catch(err=>console.log(err))
-  },[project])
+  },[])
     
   return (
     <div className=" max-w-screen overflow-hidden dark:bg-[#1B2431]">
