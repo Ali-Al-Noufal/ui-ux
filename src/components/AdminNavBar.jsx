@@ -15,7 +15,7 @@ const AdminNavBar = ({items}) => {
             'Content-Type':"application/json",
             Authorization:localStorage.getItem("Token")
           }
-        }).then(res=>{console.log(res.data),navigate("/"),localStorage.removeItem("Token")})
+        }).then(res=>{console.log(res.data),navigate("/"),localStorage.removeItem("token")})
         .catch(err=>console.log(err))
     }
   return (
