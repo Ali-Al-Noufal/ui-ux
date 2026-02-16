@@ -36,7 +36,7 @@ const navigate=useNavigate()
                     <h1 className="font-bold text-xl m-3">{message.name}</h1>
                     <h1 className="font-bold text-[20px] m-3">{message.email}</h1>
                     <h1 className="font-bold text-[20px] m-3">{message.phone}</h1>
-                    <p className="ps-3 w-full h-[50%]  text-[14px]">{message.content}</p>
+                    <p className="ps-3 w-full  text-[14px]">{message.content}</p>
 <div className="flex  gap-5 my-3">
 <button onClick={()=>deleteMessage(message.id)} className="border w-20 bg-[#be2828] text-[#FFFFFF] h-10 rounded-sm">delete</button></div>
                 </div>

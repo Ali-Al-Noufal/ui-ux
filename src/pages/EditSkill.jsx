@@ -31,9 +31,9 @@ const EditSkill = () => {
     <div className=" flex justify-center items-center max-w-screen h-screen">
         <form className="w-[80vw] lg:w-200 h-110 flex flex-col items-center gap-10 bg-[#F1F4F9] mt-10 border-2 rounded-3xl" onSubmit={handleForm}>
         <h1 className="font-black text-2xl mt-3">Edit skill</h1>
-            <input type="text" name="title" placeholder="title" className="bg-[#FFFFFF] border w-[60%] h-15 rounded-2xl px-3"
+            <input type="text" name="title" placeholder="title" defaultValue={skill.title} className="bg-[#FFFFFF] border w-[60%] h-15 rounded-2xl px-3"
             onChange={(event)=>{setData({...data,["title"]:event.target.value})}} />
-            <textarea type="text" name="description" placeholder="description" className="bg-[#FFFFFF] border w-[60%] h-30 rounded-2xl p-5"
+            <textarea type="text" name="description" placeholder="description" defaultValue={skill.description} className="bg-[#FFFFFF] border w-[60%] h-30 rounded-2xl p-5"
             onChange={(event)=>{setData({...data,["description"]:event.target.value})}}></textarea>
             <input type="submit" value="edit" className="bg-[#1d1d1d] text-[#FFFFFF] border w-[60%] h-15 text-center rounded-2xl px-3" />
       </form>

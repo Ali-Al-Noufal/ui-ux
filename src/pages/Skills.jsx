@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 const Skills = () => {
 const [skills,setSkills]=useState([])
 const [reload,setReload]=useState(false)
+const [data,setData]=useState({})
 const navigate=useNavigate()
       useEffect(()=>{
         axios.get("https://ui-ux-portfolio-alpha.vercel.app/api/api/skills",{
