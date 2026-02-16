@@ -104,7 +104,7 @@ const Show = () => {
         onSwiper={setSwiperInstance}
         observer={true}           // يراقب التغييرات في العناصر
         observeParents={true}     // يراقب التغييرات في العناصر الأب
-        loop={true}               // تفعيل الدوران
+        loop={projects?.length>5}               // تفعيل الدوران
         slidesPerView={1}
         spaceBetween={30}
   breakpoints={{
@@ -121,7 +121,7 @@ modules={[Pagination, Navigation]}
       >
             {projects?.map((project)=>{
                 return(
-                    <SwiperSlide key={project.id} onClick={()=>{showProject(project.id)}} className="h-80 w-[80%] md:w-[50%] lg:w-[30%] flex flex-col justify-between pointer-coarse ">
+                    <SwiperSlide key={project.id} onClick={()=>{showProject(project.id)}} className="h-80 flex flex-col justify-between pointer-coarse ">
                         <img src={project.image} className="w-full h-55 border border-[#FFFFFF] rounded-lg dark:border-[#1D2130]"/>
                         <div className="h-17 w-full flex flex-col justify-between items-start relative">
                             <h1 className="text-[#1D2130] font-semibold text-[22px] dark:text-[#FFFFFF]">{project.title}</h1>
