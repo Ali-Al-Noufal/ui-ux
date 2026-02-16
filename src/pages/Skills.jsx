@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 const Skills = () => {
 const [skills,setSkills]=useState([])
+const [reload,setReload]=useState(false)
 const navigate=useNavigate()
       useEffect(()=>{
         axios.get("https://ui-ux-portfolio-alpha.vercel.app/api/api/skills",{
@@ -15,7 +16,7 @@ const navigate=useNavigate()
           }
         }).then(res=>setSkills(res.data))
         .catch(err=>console.log(err))
-},[])
+},[reload])
       const editSkill=(id)=>{
         navigate(`/dashboard/editSkill/${id}`)
     }
@@ -27,7 +28,7 @@ const navigate=useNavigate()
             "Content-Type":"multipart/form-data",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>{console.log(res),alert(res.data.message),navigate(0)})
+        }).then(res=>{console.log(res),alert(res.data.message),navigate("/dashboard"),setReload(pre=>!pre)})
 .catch(err=>console.log(err))
       }
       const deleteSkill=(id)=>{
@@ -37,7 +38,7 @@ const navigate=useNavigate()
             'Content-Type':"application/json",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>navigate(0))
+        }).then(res=>{alert(res.data.message),navigate("/dashboard"),setReload(pre=>!pre)})
         .catch(err=>console.log(err))
       }
   return (

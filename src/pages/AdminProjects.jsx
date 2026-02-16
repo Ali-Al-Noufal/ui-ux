@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 const AdminProjects = () => {
       const [projects,setProjects]=useState([])
+      const [reload,setReload]=useState(false)
       const [data, setData] = useState({})
       const navigate=useNavigate()
       useEffect(()=>{
@@ -16,7 +17,7 @@ const AdminProjects = () => {
           }
         }).then(res=>setProjects(res.data))
         .catch(err=>console.log(err))
-      },[])
+      },[reload])
       const editProject=(id)=>{
         navigate(`/dashboard/editProject/${id}`)
     }
@@ -28,7 +29,7 @@ const AdminProjects = () => {
             "Content-Type":"multipart/form-data",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>{console.log(res),alert(res.data.message),navigate(0)})
+        }).then(res=>{console.log(res),alert(res.data.message),navigate("/dashboard"),setReload(pre=>!pre)})
 .catch(err=>console.log(err))
       }
       const deleteProject=(id)=>{
@@ -38,7 +39,7 @@ const AdminProjects = () => {
             'Content-Type':"application/json",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>navigate(0))
+        }).then(res=>{alert(res.data.message),navigate("/dashboard"),setReload(pre=>!pre)})
         .catch(err=>console.log(err))
       }
   return (

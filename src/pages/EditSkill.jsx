@@ -15,7 +15,7 @@ const EditSkill = () => {
           }
         }).then(res=>{setSkill(res.data),setData(res.data)})
         .catch(err=>console.log(err))
-      },[skill])
+      },[])
             const handleForm=(event)=>{
         event.preventDefault()
         axios.post(`https://ui-ux-portfolio-alpha.vercel.app/api/api/skills/${params.id}`,{...data,"_method":"PUT"},{

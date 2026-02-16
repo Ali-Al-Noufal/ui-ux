@@ -19,7 +19,7 @@ const AdminShowProject = () => {
           }
         }).then(res=>{setProject(res.data),setData(res.data)})
         .catch(err=>console.log(err))
-      },[project])
+      },[])
             const handleForm=(event)=>{
         event.preventDefault()
         axios.post(`https://ui-ux-portfolio-alpha.vercel.app/api/api/projects/${params.id}`,{...data,"_method":"PUT"},{
@@ -28,7 +28,7 @@ const AdminShowProject = () => {
             "Content-Type":"multipart/form-data",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>{console.log(res),alert(res.data.message),navigate(0)})
+        }).then(res=>{console.log(res),alert(res.data.message),navigate("/dashboard")})
 .catch(err=>console.log(err))
       }
   return (

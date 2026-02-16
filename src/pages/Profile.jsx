@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom"
 const Profile = () => {
       const [user,setUser]=useState([])
       const [data,setData]=useState({})
-      const navigate=useNavigate()
+      const [reload,setReload]=useState(false)
+      
       useEffect(()=>{
         axios.get("https://ui-ux-portfolio-alpha.vercel.app/api/api/guest/users/1",{
           headers:{
@@ -14,7 +15,7 @@ const Profile = () => {
           }
         }).then(res=>{setUser(res.data),setData(res.data)})
         .catch(err=>console.log(err))
-      },[])
+      },[reload])
       const handleForm=(event)=>{
         event.preventDefault()
         axios.post("https://ui-ux-portfolio-alpha.vercel.app/api/api/user/1/edit",{...data,"_method":"PUT"},{
@@ -23,7 +24,7 @@ const Profile = () => {
             "Content-Type":"multipart/form-data",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>{console.log(res),alert(res.data.message),navigate(0)})
+        }).then(res=>{console.log(res),alert(res.data.message),setReload(pre=>!pre)})
 .catch(err=>console.log(err))
       }
   return (

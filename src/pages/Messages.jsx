@@ -23,7 +23,7 @@ const navigate=useNavigate()
             'Content-Type':"application/json",
             Authorization:localStorage.getItem("token")
           }
-        }).then(res=>navigate(0))
+        }).then(res=>navigate("/dashboard"))
         .catch(err=>console.log(err))
       }
   return (
