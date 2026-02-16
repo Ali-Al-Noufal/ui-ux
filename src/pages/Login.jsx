@@ -9,7 +9,7 @@ const Login = () => {
     const handleForm=(event)=>{
         event.preventDefault()
         console.log(data)
-        axios.post("https://ui-ux-portfolio-alpha.vercel.app/api/",data,{
+        axios.post("https://ui-ux-portfolio-alpha.vercel.app/api/api/",data,{
             headers:{
                 "Accept":"application/json",
             }
