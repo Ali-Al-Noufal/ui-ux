@@ -9,10 +9,9 @@ const Login = () => {
     const handleForm=(event)=>{
         event.preventDefault()
         console.log(data)
-        axios.post("https://ui-ux-portfolio-alpha.vercel.app/api/api/",data,{
+        axios.post("https://ui-ux-portfolio-alpha.vercel.app/api/",data,{
             headers:{
                 "Accept":"application/json",
-                "Content-Type":"multipart/form-data",
             }
         }).then(res=>{console.log(res),localStorage.setItem("token",`Bearer ${res.data.data.token}`),navigate("/dashboard")})
         .catch(err=>console.log(err))
